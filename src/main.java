@@ -1,4 +1,6 @@
+import br.com.dio.desafio.Bootcamp;
 import br.com.dio.desafio.Curso;
+import br.com.dio.desafio.Dev;
 import br.com.dio.desafio.Mentoria;
 
 import java.time.LocalDate;
@@ -21,9 +23,44 @@ public class main {
         mentoria.setData(LocalDate.now());
 
 
-        System.out.println(curso1);
+      /*  System.out.println(curso1);
         System.out.println(curso2);
-        System.out.println(mentoria);
+        System.out.println(mentoria);*/
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descricão Bootcamp Java Developer");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev devCrisleine = new Dev();
+        devCrisleine.setNome("Crisleine");
+        devCrisleine.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos Crisleine:" +devCrisleine.getConteudosInscritos());
+        devCrisleine.progredir();
+        devCrisleine.progredir();
+
+
+        System.out.println("_");
+        System.out.println("Conteúdos Inscritos Crisleine:" +devCrisleine.getConteudosInscritos());
+        System.out.println("Conteúdos Concluídos Crisleine:" +devCrisleine.getConteudosConcluidos());
+        System.out.println("xP:" +devCrisleine.calcularTotalXp());
+
+        System.out.println("__________");
+
+        Dev devMarcos = new Dev();
+        devMarcos.setNome("Marcos");
+        devMarcos.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos Marcos:" +devMarcos.getConteudosInscritos());
+        devMarcos.progredir();
+        devMarcos.progredir();
+        devMarcos.progredir();
+
+        System.out.println("_");
+        System.out.println("Conteúdos Inscritos Marcos:" +devMarcos.getConteudosInscritos());
+        System.out.println("Conteúdos Concluídos Marcos:" +devMarcos.getConteudosConcluidos());
+        System.out.println("xP:"+ devMarcos.calcularTotalXp());
 
     }
 
